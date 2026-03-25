@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banana Check</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <h1 class="site-title">Banana Check</h1>
+        <p class="site-description">
+          A quick word checker for casual Bananagrams—type a word, press Check or Enter, and see
+          if it’s valid plus a short definition.
+        </p>
+      </header>
+
+      <main class="main-card">
+        <form class="word-form" id="word-form" action="#" method="get" novalidate>
+          <div class="input-row">
+            <label class="sr-only" for="word-input">Word to check</label>
+            <input
+              type="text"
+              id="word-input"
+              name="word"
+              class="word-input"
+              placeholder="Type a word…"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="true"
+              enterkeyhint="search"
+            />
+            <button type="submit" class="btn-check" id="btn-check">
+              <span class="btn-check-label">Check</span>
+              <span class="btn-banana" aria-hidden="true">
+                <img
+                  class="icon-banana"
+                  src="https://uxwing.com/wp-content/themes/uxwing/download/fruits-vegetables/banana-icon.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+            </button>
+          </div>
+        </form>
+
+        <section class="result-block" aria-labelledby="result-heading">
+          <h2 id="result-heading" class="sr-only">Result</h2>
+          <div class="banana-stage" aria-hidden="true">
+            <div class="banana-mascot banana-mascot--neutral" id="banana-mascot">
+              <div class="banana-graphic" role="img" aria-label="Banana mascot">
+                <img
+                  class="banana-photo banana-photo--neutral"
+                  src="assets/banana-neutral.png"
+                  alt=""
+                  width="120"
+                  height="120"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+                <img
+                  class="banana-photo banana-photo--ripe"
+                  src="assets/banana-ripe.png"
+                  alt=""
+                  width="120"
+                  height="120"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+                <img
+                  class="banana-photo banana-photo--rotten"
+                  src="assets/banana-rotten.png"
+                  alt=""
+                  width="120"
+                  height="120"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+              </div>
+            </div>
+          </div>
+          <p class="validity-line" id="validity-label">Ready</p>
+          <p class="definition-line" id="definition-text">
+            Type a lowercase word (2+ letters) and check it against the dictionary.
+          </p>
+        </section>
+      </main>
+
+      <section class="history-section" aria-labelledby="history-heading">
+        <h2 id="history-heading" class="history-heading">Recent checks</h2>
+        <p class="history-placeholder" id="history-placeholder">
+          Last few words you checked will appear here (with ✓ or ✗).
+        </p>
+        <ul class="history-list" id="history-list" hidden></ul>
+      </section>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
